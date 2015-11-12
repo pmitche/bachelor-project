@@ -1,0 +1,41 @@
+<script type="text/ng-template" id="textAreaPreview.html">
+    <section ng-show="field.active">
+        <center ng-class="[field.font.class,field.fontSize.class]"><span ng-bind-html="field.valueOne | formatText"></span></center>
+    </section>
+</script>
+
+<script type="text/ng-template" id="textColumnAreaPreview.html">
+    <section ng-show="field.active">
+        <div ng-class="[field.font.class,field.fontSize.class]">
+            <p style="text-align: left; float: left;">
+                <span style="margin-right: 5px;" ng-bind-html="field.valueOne | formatText"></span>
+            </p>
+            <p style="text-align: right;">
+                <span ng-bind-html="field.valueTwo | formatText"></span>
+            </p>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="linePreview.html">
+    <section ng-show="field.active">
+        <center><hr id="line-seperator-in-middle-of-ad"></center>
+    </section>
+</script>
+
+<script type="text/ng-template" id="symbolPreview.html">
+    <section ng-show="field.active">
+        <center>
+            <img align="center" ng-src="{{previewComponentsCtrl.images[field.valueOne].location}}"/>
+        </center>
+    </section>
+</script>
+
+<div id="white-background">
+    <div id="printable" class="preview-height-general">
+        <hr id="top-of-ad-line">
+        <section ng-repeat="field in previewComponentsCtrl.linearizedComponents | sortByIndexArray:previewComponentsCtrl.orderOfComponents"
+                 ng-include="field.viewType + 'Preview.html'">
+        </section>
+    </div>
+</div>

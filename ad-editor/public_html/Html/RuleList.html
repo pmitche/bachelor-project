@@ -1,0 +1,18 @@
+<table class="table" id="table-white-background">
+    <thead>
+        <tr class="table-striped">
+            <th>{{stringCtrl.getNorwegianString("Type")}}</th>
+            <th>{{stringCtrl.getNorwegianString("component A")}}</th>
+            <th>{{stringCtrl.getNorwegianString("component B")}}</th>
+            <th>{{stringCtrl.getNorwegianString("position")}}</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="rule in ruleListCtrl.rules">
+        <tr class="table-striped">
+            <td style="text-align: left">{{rule.description}}</td>
+            <td>{{rule.componentA.id}}</td>
+            <td>{{rule.componentB.id}}</td>
+            <td>{{rule.position}}</td>
+        </tr>
+    </tbody>
+</table>

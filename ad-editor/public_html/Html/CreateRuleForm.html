@@ -1,0 +1,18 @@
+<form id='create-rule-form'>
+    <p><span class="glyphicon glyphicon-align-justify"></span> {{stringCtrl.getNorwegianString("Rules")}} &nbsp;&nbsp;| </p>
+    <select ng-model="createRulesFormCtrl.rule" ng-options="rule.description for (key, rule) in createRulesFormCtrl.rules" ng-change="createRulesFormCtrl.showAdditional()" >
+    </select>
+    <select ng-model="createRulesFormCtrl.componentA" ng-options="component.id for component in createRulesFormCtrl.components" >
+        <option value="" disabled selected>{{stringCtrl.getNorwegianString("component A")}}</option>
+    </select>
+    <div  ng-show="createRulesFormCtrl.showSecondComponent">
+        <select ng-model="createRulesFormCtrl.componentB" ng-options="component.id for component in createRulesFormCtrl.components">
+            <option value="" disabled selected>{{stringCtrl.getNorwegianString("component B")}}</option>
+        </select>
+    </div>
+    <div ng-show="createRulesFormCtrl.showNumber">
+        <p>{{stringCtrl.getNorwegianString("position")}}</p>
+        <input ng-model="createRulesFormCtrl.number" type="number" name="quantity" min="0" max="20">
+    </div>
+    <button ng-click="createRulesFormCtrl.createRule()" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-plus"></span> {{stringCtrl.getNorwegianString("create rule")}}</button>
+</form>

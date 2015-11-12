@@ -1,0 +1,23 @@
+<div id="contextMenu" ng-show="field.contextMenuShowing" 
+     ng-style="{'left': editComponentsCtrl.left, 'top': editComponentsCtrl.top}"
+     >
+   
+    <table>
+        <tr>
+            <td>
+                <b>{{stringCtrl.getNorwegianString("Change font")}}</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select ng-model="field.font" ng-options="font.name for font in editComponentsCtrl.fonts" ></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select ng-model="field.fontSize" ng-options ="fontSize.name for fontSize in editComponentsCtrl.fontsSize" ></select>
+            </td>
+        </tr>
+    </table>
+</div>
+    

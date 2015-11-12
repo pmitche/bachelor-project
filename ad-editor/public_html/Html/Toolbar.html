@@ -1,0 +1,10 @@
+<section id="toolbar">
+    <ul>
+        <li><span class="glyphicon glyphicon-wrench"></span> {{stringCtrl.getNorwegianString("Tools")}} | </li>
+        <li><select ng-model="toolbarCtrl.component" ng-options="component.description for (key, component) in toolbarCtrl.availableComponents | showOnlyIfNumberUnequalToZero"></select></li>
+        <li><button ng-click="toolbarCtrl.addComponent()" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span> {{stringCtrl.getNorwegianString("add component")}}</button></li>
+    </ul>
+    <ul>
+        <li><div create-rules-form ng-show="userInfoCtrl.templateView"></div></li>
+    </ul>
+</section>

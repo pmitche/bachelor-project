@@ -1,0 +1,25 @@
+<div class="col-sm-5 col-md-5 col-lg-5" id="preview-view-section">
+    <section ng-show="userInfoCtrl.templateView">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active:panelCtrl.isSelected(1)}"><a href ng-click="panelCtrl.selectTab(1)">{{stringCtrl.getNorwegianString("Preview")}}</a></li>
+            <li ng-class="{ active:panelCtrl.isSelected(2)}"><a href ng-click="panelCtrl.selectTab(2)">{{stringCtrl.getNorwegianString("Rules")}}</a></li>
+            <li ng-class="{ active:panelCtrl.isSelected(3)}"><a href ng-click="panelCtrl.selectTab(3)">{{stringCtrl.getNorwegianString("Number Components")}}</a></li>
+        </ul>
+    </section>
+    <div class="panel" ng-show="panelCtrl.isSelected(1)" ng-controller="approveController as approveCtrl">
+        <section>
+            <h2 ng-show="!userInfoCtrl.templateView">{{stringCtrl.getNorwegianString("Preview")}}</h2>
+            <hr style="border-color: black; margin: 10px 0;">
+            <preview-components></preview-components>
+        </section>
+        <div id="approve-btn">
+            <button type="button" ng-click="approveCtrl.approve()" class="btn btn-success"><span class="glyphicon glyphicon-saved"></span>{{stringCtrl.getNorwegianString("approve")}}</button>
+        </div>
+    </div>
+    <div class="panel set-scrollable-height" ng-show="panelCtrl.isSelected(2) && userInfoCtrl.templateView">
+        <div rule-list></div>
+    </div>
+    <div class="panel set-scrollable-height" ng-show="panelCtrl.isSelected(3) && userInfoCtrl.templateView">
+        <div number-components-specification></div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+#contextMenu{
+    background-color: #eee;
+    border-style:solid;
+    border-width: 1px;
+    width: 170px;
+    height: 100px;
+    display: block;
+    position: fixed;
+    z-index: 10;
+    box-shadow: 5px 5px 5px #555;
+}
+#contextMenu td{
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    padding: 2px;
+    padding-left: 4px;
+}
+

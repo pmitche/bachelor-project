@@ -1,0 +1,92 @@
+<script type="text/ng-template" id="textArea.html">
+    <section class="row" ng-class="[field.activeClass, field.dragableClass]" ng-right-click="field.showContextMenu()" ng-mousedown="editComponentsCtrl.setMouse($event, field)" >
+        <div class="col-md-1 col-lg-1 description nopadding-leftcol">
+            <p ng-show="userInfoCtrl.templateView">{{field.id +" "+field.description}}</p>
+            <p ng-show="!userInfoCtrl.templateView">{{field.description}}</p>
+        </div>
+        <div class="col-md-8 col-lg-8 content nopadding-midcol">
+            <textArea id="textbox" ng-class="[field.font.class,field.fontSize.class]" ng-show="field.active" ng-model="field.valueOne">{{field.valueOne}}</textarea>
+        </div>
+        <div class="col-md-1 col-lg-1 nopadding-rightcol">
+            <button ng-class="field.activeButtonClass" ng-click="editComponentsCtrl.handleDeleteComponent(field)">{{field.activateButtonText}}</button>
+        </div>
+        <context-menu></context-menu>
+    </section>
+</script>
+
+<script type="text/ng-template" id="textColumnArea.html">
+    <section class="row" ng-class="[field.activeClass, field.dragableClass]"  
+             ng-right-click="field.showContextMenu()"
+             ng-mousedown="editComponentsCtrl.setMouse($event, field)">
+
+        <div class="col-md-1 col-lg-1 description nopadding-leftcol">
+            <p ng-show="userInfoCtrl.templateView">{{field.id +" "+field.description}}</p>
+            <p ng-show="!userInfoCtrl.templateView">{{field.description}}</p>
+        </div>
+        <div class="col-md-8 col-lg-8 content nopadding-midcol">
+            <div class="row" ng-show="field.active">
+                <div class="col-md-5 col-lg-5 nopadding-leftcol">
+                    <textArea id="textbox" ng-class="[field.font.class,field.fontSize.class]" ng-model="field.valueOne">{{field.valueOne}}</textarea>
+                </div>
+                <div class="col-md-5 col-lg-5 nopadding-rightcol">
+                    <textArea id="textbox" ng-class="[field.font.class,field.fontSize.class]" ng-model="field.valueTwo">{{field.valueTwo}}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-lg-1 nopadding-rightcol">
+            <button ng-class="field.activeButtonClass" ng-click="editComponentsCtrl.handleDeleteComponent(field)">{{field.activateButtonText}}</button>
+        </div>
+        <context-menu></context-menu>    
+    </section>
+</script>
+
+<script type="text/ng-template" id="line.html">
+    <section class="row" ng-class="[field.activeClass, field.dragableClass]">
+        <div class="col-md-1 col-lg-1 description nopadding-leftcol">
+            <p ng-show="userInfoCtrl.templateView">{{field.id +" "+field.description}}</p>
+            <p ng-show="!userInfoCtrl.templateView">{{field.description}}</p>
+        </div>
+        <div class="col-md-8 col-lg-8 content nopadding-midcol">
+            <p id="line" ng-show="field.active">_______________________________________________________</p>
+        </div>
+        <div class="col-md-1 col-lg-1 nopadding-rightcol">
+            <button ng-class="field.activeButtonClass" ng-click="editComponentsCtrl.handleDeleteComponent(field)">{{field.activateButtonText}}</button>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="symbol.html">
+    <section class="row symbols" ng-class="[field.activeClass, field.dragableClass]">
+        <div class="col-md-1 col-lg1 description nopadding-leftcol">
+            <p ng-show="userInfoCtrl.templateView">{{field.id +" "+field.description}}</p>
+            <p ng-show="!userInfoCtrl.templateView">{{field.description}}</p>
+        </div>
+        <div class="col-md-8 col-lg-8 content nopadding-midcol">
+            <section ng-show="field.active" ng-repeat="image in editComponentsCtrl.images" style="float: left" ng-class="{'selected':field.valueOne===image.index}">
+                <img ng-click="editComponentsCtrl.setSelectedImageTo(field,image.index)"
+                     ng-src="{{image.location}}" class="symbol">
+            </section>
+        </div>
+        <div class="col-md-1 col-lg-1 nopadding-rightcol">
+            <button ng-class="field.activeButtonClass" ng-click="editComponentsCtrl.handleDeleteComponent(field)">{{field.activateButtonText}}</button>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="block.html">
+    <section class="row fix-padding">
+        <div class="fix-block-padding-top-down" ng-repeat="field in field.elements" ng-include="field.viewType + '.html'"></div>
+    </section>
+</script>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <ul id="edit-section" dnd-list="editComponentsCtrl.getComponents()">
+            <li ng-repeat="field in editComponentsCtrl.getComponents() | sortByIndexArrayWithBlocks:editComponentsCtrl.getOrderOfComponents()"
+                dnd-draggable="field"
+                dnd-disable-if="!field.dragable"
+                ng-include="field.viewType + '.html'">
+            </li>
+        </ul>
+    </div>
+</div>

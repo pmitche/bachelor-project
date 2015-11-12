@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Css/BasicCss.css">
+        <link rel="stylesheet" type="text/css" href="Css/ContextMenu.css"/>
+        <link rel="stylesheet" type="text/css" href="Css/bootstrap.css"/>
+        <title>Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-app="myApp" ng-controller="userInformationController as userInfoCtrl" >
+        <div ng-controller="stringController as stringCtrl">
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <a href="http://www.adressa.no"><img src="Resources/images/adressaLogo.png" alt="Adressa logo" height="50" width="250"/></a>
+                        <button ng-click="userInfoCtrl.changeUserRole()" style="float: right" class="btn btn-sm btn-primary">{{stringCtrl.getNorwegianString("change user role")}}</button>
+                    </nav>
+                </div>
+                <div class="row">
+                    <ul class="breadcrumb">
+                        <li><a href="http://www.adressa.no">{{stringCtrl.getNorwegianString("Adresseavisen")}}</a></li>
+                        <li><a href="#">{{stringCtrl.getNorwegianString("Ad Editor")}}</a></li>
+                        <li class="active">{{stringCtrl.getNorwegianString("Create new ad")}}</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6" id="edit-view-section">
+                        <h2>{{stringCtrl.getNorwegianString("Editor")}}</h2>
+                        <div toolbar></div>
+                        <div edit-components></div>
+                        <div id="edit-buttons">
+                            <div ng-controller="loadController as loadCtrl">
+                                <input fileread="loadCtrl.file" type="file" id="files" name="files[]" class="btn-file"/>
+                                <button ng-click="loadCtrl.loadFile()" class="btn btn-sm btn-primary">{{stringCtrl.getNorwegianString("load")}}</button>
+                            </div>
+                            <div ng-controller="saveController as saveCtrl">
+                                <button ng-click="saveCtrl.save()" class="btn btn-sm btn-primary save-button"><span class="glyphicon glyphicon-save"></span> {{stringCtrl.getNorwegianString("save ad")}}</button>
+                                <button ng-click="saveCtrl.loadSavedAd()" class="btn btn-sm btn-primary save-button"><span class="glyphicon glyphicon-open"></span> {{stringCtrl.getNorwegianString("load saved ad")}}</button><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div preview-rules-tab-view></div>
+                </div>
+            </div>
+        </div>
+        <script src="libs/angular/angular.min.js" type="text/javascript"></script>
+        <script src="libs/html2canvas/html2canvas.js" type="text/javascript"></script>
+        <script type="text/javascript" src="libs/angular/angular-mocks.js"></script>
+        <script type="text/javascript" src="libs/angular/angular-sanitize.min.js"></script>       
+        <script src="javascript/Model.js"></script>
+        <script src="javascript/Services/ComponentsService.js"></script>
+        <script src="javascript/Directives/EditComponentsDirective.js"></script>
+        <script src="javascript/Directives/PreviewComponentsDirective.js"></script>
+        <script src="javascript/Services/FontService.js"></script>
+        <script src="javascript/Services/SymbolService.js"></script>
+        <script src="Javascript/Controllers/ApproveController.js" type="text/javascript"></script>
+        <script src="Javascript/Directives/CreateRulesDirective.js" type="text/javascript"></script>
+        <script src="Javascript/Services/RuleCheckerService.js" type="text/javascript"></script>
+        <script src="Javascript/Services/ReadFileService.js" type="text/javascript"></script>
+        <script src="Javascript/Controllers/LoadController.js" type="text/javascript"></script>
+        <script src="Javascript/Directives/PreviewComponentsDirective.js" type="text/javascript"></script>
+        <script src="Javascript/Directives/ContextMenuDirective.js"></script>
+        <script src="Javascript/Controllers/SaveController.js" type="text/javascript"></script>
+        <script src="libs/angular-drag-and-drop-lists.js" type="text/javascript"></script>
+        <script src="libs/FileSaver/FileSaver.min.js" type="text/javascript"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="libs/bootstrap.js" type="text/javascript"></script>
+        <script src="Javascript/Directives/RuleListDirective.js" type="text/javascript"></script>
+        <script src="Javascript/Directives/PreviewRulesTabViewDirective.js" type="text/javascript"></script>
+        <script src="libs/jsPDF/jspdf.min.js" type="text/javascript"></script>
+        <script src="Javascript/Services/StringService.js" type="text/javascript"></script>
+        <script src="Javascript/Directives/NumberComponentsSpecificationDirective.js" type="text/javascript"></script>
+        <script src="Javascript/Directives/ToolbarDirective.js" type="text/javascript"></script>
+        <script src="Javascript/Filter.js" type="text/javascript"></script>
+    </body>
+</html>

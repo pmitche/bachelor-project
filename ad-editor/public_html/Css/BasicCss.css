@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// fonts
+@font-face {
+    font-family: OlisiponeBold;
+    src: url(fonts/olisipone-bold.otf);
+}
+@font-face {
+    font-family: OlisiponeHeadBook;
+    src: url(fonts/olisipone-headbook.otf);
+}
+@font-face {
+    font-family: OlisiponeHeadDemi;
+    src: url(fonts/olisipone-headdemi.otf);
+}
+
+.olisipone-bold {
+    font-family: OlisiponeBold;
+}
+.olisipone-headbook {
+    font-family: OlisiponeHeadBook;
+}
+.olisipone-headdemi {
+    font-family: OlisiponeHeadDemi;
+}
+.size8{
+    font-size: 8px;
+}
+.size10{
+    font-size: 10px;
+}
+.size12{
+    font-size: 12px;
+}
+.size14{
+    font-size: 14px;
+}
+.size16{
+    font-size: 16px;
+}
+.size18{
+    font-size: 18px;
+}
+.size20{
+    font-size: 20px;
+}
+
+#edit-section {
+    overflow-y: auto;
+    height: 60vh;
+    margin-bottom: 25px;
+}
+
+#textfield {
+    width: 80%;
+    height: 100%;
+    resize: none;
+    float: left;
+}
+
+.selected {
+    background: blue;
+}
+
+.symbol {
+    height: 75px;
+    width: 75px;
+    border: 1px solid;
+    margin: 2px;
+    align: middle;
+}
+
+nav {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+.inactive-component {
+    border-color: solid red;
+    border-width: 1px;
+    background: repeating-linear-gradient(45deg, #D8D8D8, #D8D8D8 10px, #fff 10px, #fff 20px) !important;
+    margin: -10px;
+}
+
+.breadcrumb-container {
+    margin-top: 0px;
+    border-bottom: 2px solid #ff9933;
+    margin-bottom: 20px;
+}
+
+.nopadding-leftcol {
+   padding: 0 !important;
+   margin-left: 15px !important;
+   margin-right: 0px !important;
+}
+
+.nopadding-midcol {
+    padding: 0 !important;
+    padding-right: 0px !important;
+    margin-left: 40px !important;
+    margin-right: 0px !important;
+}
+
+.nopadding-rightcol {
+    padding: 0 !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.container {
+    margin-bottom: 0px;
+}
+
+.container h2 {
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+#edit-view-section {
+    padding: 0px;
+    background-color: #f4f4f4;
+    padding-bottom: 0px;
+    height: 83vh;
+}
+
+#edit-view-section #toolbar {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+#edit-view-section #toolbar ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+#edit-view-section #toolbar ul li {
+    text-decoration: none;
+    display: inline;
+}
+
+#edit-view-section #toolbar button {
+    margin-left: 4px;
+}
+
+#edit-section .description {
+    font-weight: bold;
+    width: 70px;
+}
+
+#edit-section .description p {   
+    width: 100px;
+}
+
+#edit-section .content #line {
+    width: 82%;
+    overflow: hidden;
+}
+
+#edit-section .content #textbox {
+    width: 82%;
+    resize: none;
+}
+
+#edit-buttons {
+    margin: 0;
+    background-color: #fafafa;
+    padding-top: 10px;
+    border-top: 1px solid #cfcfcf;
+    height: 52px;
+}
+
+#edit-buttons button {
+    float: left;
+}
+
+#edit-buttons input {
+    width: 200px;
+}
+
+#edit-buttons .save-button {
+    margin-right: 5px;
+    float: right;
+}
+#preview-view-section {
+    margin-left: 40px;
+    padding: 0px;
+    background-color: #f4f4f4;
+    height: 83vh;
+    float: right;
+}
+
+#preview-view-section #approve-btn {
+    margin-top: 8px;
+    text-align: center;
+    background-color: #fafafa;
+    height: 52px;
+    border-top: 1px solid #cfcfcf;
+}
+
+#preview-view-section #approve-btn button {
+    width: 200px;
+    margin: -20px -100px;
+    position: relative;
+    top: 13px;
+}
+
+#preview-view-section #white-background {
+    background-color: white;
+    width: 450px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+#printable {
+    background-color: white;
+    min-height: 66.5vh;
+    padding-bottom: 100px;
+}
+.preview-height-general {
+    height: 66.5vh;
+}
+.preview-height-image-creation {
+    min-height: 66.5vh;
+}
+
+#top-of-ad-line {
+    margin: 2px auto 109px auto;
+    width: 60%;
+    border-color: black
+}
+
+#line-seperator-in-middle-of-ad {
+    margin: 50px auto 20px auto;
+    width: 60%;
+    border-color: black;
+}
+
+/*
+* For creating a styled input button
+*/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    margin: 2px 5px;
+    float: left;
+}
+
+.btn-danger, .btn-success {
+    width: 72px;
+}
+
+.panel {
+    background-color: #f4f4f4 !important;
+}
+
+.set-scrollable-height {
+    overflow-y: auto;
+    height: 75vh;
+}
+
+// drag and drop
+
+/**
+ * For the correct positioning of the placeholder element, the dnd-list and
+ * it's children must have position: relative
+ */
+ul[dnd-list], ul[dnd-list] > li { 
+    pointer-events: auto;
+    position: relative;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+ul[dnd-list] .dndPlaceholder {
+    display: block;
+    background-color: #ddd;
+    min-height: 42px;
+}
+
+ul[dnd-list] .dndDragover {
+    background-color: red;
+}
+ul[dnd-list] li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    padding: 10px 31px 10px 15px;
+    margin-bottom: 0px;
+}
+
+.fix-padding {
+    padding: 10px 16px 10px 15px !important;
+}
+
+.fix-block-padding-top-down {
+    margin-bottom: 12px; 
+}
+
+.dragable-component {
+    cursor: all-scroll;
+}
+
+.non-dragable-component {
+    background-image: url("../Resources/images/not-draggable-icon3.png");
+    background-repeat: no-repeat;
+    background-position-x: 470px;
+    background-position-y: 0px;
+}
+
+//rule table
+table tr td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+table tr th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+#create-rule-form > * {
+    display: inline;
+}
+
+#create-rule-form div > * {
+    display: inline;
+}
+
+.container #preview-view-section #table-white-background {
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    //height: 66.5vh;
+}

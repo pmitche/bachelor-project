@@ -1,0 +1,16 @@
+<br/>
+<p style="margin-left: 25px">{{stringCtrl.getNorwegianString("If the number is unlimited, use -1")}}</p>
+<table class="table" id="table-white-background">
+    <thead>
+        <tr class="table-striped">
+            <th>{{stringCtrl.getNorwegianString("Type")}}</th>
+            <th>{{stringCtrl.getNorwegianString("Max Number")}}</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="component in numberComponentsSpecificationCtrl.availableComponents">
+        <tr class="table-striped">
+            <td style="text-align: left">{{component.description}}</td>
+            <td style="text-align: left"><input  type="number" ng-model="component.maxNumber"></td>
+        </tr>
+    </tbody>
+</table>
